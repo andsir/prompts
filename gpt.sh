@@ -57,7 +57,7 @@ Description=ChatGPT-Next-Web
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/yarn install & yarn dev
+ExecStart=/usr/bin/yarn dev
 WorkingDirectory=/root/ChatGPT-Next-Web
 Restart=always
 User=root
@@ -66,7 +66,8 @@ User=root
 WantedBy=multi-user.target
 
 EOF
-
+    cd ~/ChatGPT-Next-Web || { echo -e "\033[31m进入目录失败，请检查后重试。\033[0m"; return; }
+    yarn install
     systemctl daemon-reload
     systemctl enable chatgpt.service
     systemctl start chatgpt
