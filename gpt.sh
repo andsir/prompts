@@ -29,14 +29,14 @@ install_ChatGPT-Next-Web() {
     cd ~/ChatGPT-Next-Web/public || { echo -e "\033[31m进入目录失败，请检查后重试。\033[0m"; return; }
     rm -rf prompts.json.bak
     mv prompts.json prompts.json.bak
-    curl -f -s -o prompts.json https://raw.githubusercontent.com/andsir/prompts/main/prompts.json || { echo -e "\033[31m拉取 prompts 失败，请检查后重试。\033[0m"; mv prompts.json.bak prompts.json; return; }
+    curl -f -s -o prompts.json https://raw.githubusercontent.com/andsir/stuff/main/prompts.json || { echo -e "\033[31m拉取 prompts 失败，请检查后重试。\033[0m"; mv prompts.json.bak prompts.json; return; }
     cd ~/ChatGPT-Next-Web/app/masks || { echo -e "\033[31m进入目录失败，请检查后重试。\033[0m"; return; }
     rm -rf cn.ts.bak
     mv cn.ts cn.ts.bak
     rm -rf en.ts.bak
     mv en.ts en.ts.bak
-    curl -f -s -o cn.ts https://raw.githubusercontent.com/andsir/prompts/main/cn.ts || { echo -e "\033[31m拉取 cn.ts 失败，请检查后重试。\033[0m"; mv cn.ts.bak cn.ts; mv en.ts.bak en.ts; return; }
-    curl -f -s -o en.ts https://raw.githubusercontent.com/andsir/prompts/main/en.ts || { echo -e "\033[31m拉取 en.ts 失败，请检查后重试。\033[0m"; mv cn.ts.bak cn.ts; mv en.ts.bak en.ts; return; }
+    curl -f -s -o cn.ts https://raw.githubusercontent.com/andsir/stuff/main/cn.ts || { echo -e "\033[31m拉取 cn.ts 失败，请检查后重试。\033[0m"; mv cn.ts.bak cn.ts; mv en.ts.bak en.ts; return; }
+    curl -f -s -o en.ts https://raw.githubusercontent.com/andsir/stuff/main/en.ts || { echo -e "\033[31m拉取 en.ts 失败，请检查后重试。\033[0m"; mv cn.ts.bak cn.ts; mv en.ts.bak en.ts; return; }
     cd ~/ChatGPT-Next-Web || { echo -e "\033[31m进入目录失败，请检查后重试。\033[0m"; return; }
      read -p "请输入Azure转换的KEY，格式为 AZURE_RESOURCE_ID:AZURE_MODEL_DEPLOYMENT:AZURE_API_KEY:AZURE_API_VERSION  " azureproxykey
 
@@ -95,7 +95,7 @@ update_prompts() {
     cd ~/ChatGPT-Next-Web/public || { echo -e "\033[31m进入目录失败，请检查后重试。\033[0m"; return; }
     rm -rf prompts.json.bak
     mv prompts.json prompts.json.bak
-    curl -f -s -o prompts.json https://raw.githubusercontent.com/andsir/prompts/main/prompts.json || { echo -e "\033[31m拉取 prompts 失败，请检查后重试。\033[0m"; mv prompts.json.bak prompts.json; return; }
+    curl -f -s -o prompts.json https://raw.githubusercontent.com/andsir/stuff/main/prompts.json || { echo -e "\033[31m拉取 prompts 失败，请检查后重试。\033[0m"; mv prompts.json.bak prompts.json; return; }
 }
 
 update_masks() {
@@ -104,8 +104,8 @@ update_masks() {
     mv cn.ts cn.ts.bak
     rm -rf en.ts.bak
     mv en.ts en.ts.bak
-    curl -f -s -o cn.ts https://raw.githubusercontent.com/andsir/prompts/main/cn.ts || { echo -e "\033[31m拉取 cn.ts 失败，请检查后重试。\033[0m"; mv cn.ts.bak cn.ts; mv en.ts.bak en.ts; return; }
-    curl -f -s -o en.ts https://raw.githubusercontent.com/andsir/prompts/main/en.ts || { echo -e "\033[31m拉取 en.ts 失败，请检查后重试。\033[0m"; mv cn.ts.bak cn.ts; mv en.ts.bak en.ts; return; }
+    curl -f -s -o cn.ts https://raw.githubusercontent.com/andsir/stuff/main/cn.ts || { echo -e "\033[31m拉取 cn.ts 失败，请检查后重试。\033[0m"; mv cn.ts.bak cn.ts; mv en.ts.bak en.ts; return; }
+    curl -f -s -o en.ts https://raw.githubusercontent.com/andsir/stuff/main/en.ts || { echo -e "\033[31m拉取 en.ts 失败，请检查后重试。\033[0m"; mv cn.ts.bak cn.ts; mv en.ts.bak en.ts; return; }
 }
 change_env() {
     cd ~/ChatGPT-Next-Web
