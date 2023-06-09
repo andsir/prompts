@@ -1,7 +1,7 @@
 #!/bin/bash
 
 show_menu() {
-    echo "请选择一个选项:如果更新代码的话可以直接卸载后重新安装"
+    echo "请选择一个选项:更新代码后要更新prompts和masks"
     echo "1. 安装 azure-openai-proxy"
     echo "2. 安装 ChatGPT-Next-Web"
     echo "3. 卸载 ChatGPT-Next-Web"
@@ -75,8 +75,8 @@ EOF
 
 update_ChatGPT-Next-Web() {
     cd ~/ChatGPT-Next-Web
-    git pull --exclude=public/prompts.json --exclude=scripts/fetch-prompts --exclude=app/masks/cn.ts --exclude=app/masks/en.ts
-
+    git pull
+    
 }
 
 uninstall_ChatGPT-Next-Web() {
